@@ -88,3 +88,8 @@
   - コピーには `copy()` メソッドを新設する（Python にはコピーコンストラクタはない）。
   - 公開するかどうかに強い意志はない。あとで役に立ちそうなので公開にしておく。
 - 穴2のテストは一時的に skip し、TODO では `move_a_stone()` を先にやる項目に入れ替えた。
+- `move_a_stone()` は list を使う明白な実装にした。`copy()` は直接のテストを書かず、`move_a_stone()` を通じて使う。`stones()` は内部の list ではなくコピーを返す。
+- Green のコミット時、skip 中の穴2のテストに mypy が `"Board" has no attribute "move"` を出していたのに、そのままコミットしてしまった。skip は実行を止めるだけで型チェックは止めない。`# type: ignore[attr-defined]` で一時的に無視し、skip を外すときに消す。
+  - Claude のコマンドが、チェックの失敗でコミットを止める組み方になっていなかった。
+- 「真に immutable」と「公開 API で immutable に振る舞う」の違いを整理した。後者に決めた → [ADR 0005](adr/0005-board-behaves-immutable.md)
+- README の ADR 一覧に 0004 が抜けていたので、0005 と一緒に足した。
