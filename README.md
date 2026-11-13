@@ -15,6 +15,12 @@ TDD の練習セッションのリポジトリ。
 - t-wada さんによる TDDBC 仙台での実践を参考にする。直接真似するわけではないが、アイデアを借りることはある。お題は違うもの。
   - https://t-wada.hatenablog.jp/entry/red-green-tdd-with-claude-code-202610
 
+## 進め方のルール
+
+- ブランチ戦略：[ADR 0001](docs/adr/0001-branch-strategy.md)
+- 意思決定と作業記録の残し方：[ADR 0002](docs/adr/0002-recording-decisions-and-worklog.md)
+  - 意思決定は `docs/adr/`、作業ログは `docs/worklog.md`
+
 ## お題：環のマンカラ
 
 ### 前提・共通ルール
