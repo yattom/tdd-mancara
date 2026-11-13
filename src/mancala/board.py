@@ -15,3 +15,11 @@ class Board:
         new._stones[from_pit - 1] -= 1
         new._stones[to_pit - 1] += 1
         return new
+
+    def move(self, pit: int) -> Board:
+        board = self
+        to_pit = pit
+        for _ in range(self.stones()[pit - 1]):
+            to_pit = to_pit + 1
+            board = board.move_a_stone(pit, to_pit)
+        return board
