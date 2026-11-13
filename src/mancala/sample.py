@@ -1,2 +1,2 @@
 def answer() -> int:
-    return 0
+    return 42
