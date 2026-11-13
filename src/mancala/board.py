@@ -13,6 +13,8 @@ class Pit(Enum):
 
 
 class Board:
+    _pit_index_map = {pit: index for index, pit in enumerate(Pit)}
+
     def __init__(self) -> None:
         self._stones = [3, 3, 3, 3, 3, 3, 3, 3]
 
@@ -42,4 +44,4 @@ class Board:
         return board
 
     def _index(self, pit: Pit) -> int:
-        return pit.value - 1
+        return self._pit_index_map[pit]
