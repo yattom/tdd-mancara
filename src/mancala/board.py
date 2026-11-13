@@ -10,16 +10,16 @@ class Board:
         new._stones = self._stones.copy()
         return new
 
-    def move_a_stone(self, from_pit: int, to_pit: int) -> Board:
+    def move_a_stone(self, from_pit_no: int, to_pit_no: int) -> Board:
         new = self.copy()
-        new._stones[from_pit - 1] -= 1
-        new._stones[to_pit - 1] += 1
+        new._stones[from_pit_no - 1] -= 1
+        new._stones[to_pit_no - 1] += 1
         return new
 
-    def move(self, pit: int) -> Board:
+    def move(self, from_pit_no: int) -> Board:
         board = self
-        to_pit = pit
-        for _ in range(self.stones()[pit - 1]):
-            to_pit = to_pit + 1
-            board = board.move_a_stone(pit, to_pit)
+        to_pit_no = from_pit_no
+        for _ in range(self.stones()[from_pit_no - 1]):
+            to_pit_no = to_pit_no + 1
+            board = board.move_a_stone(from_pit_no, to_pit_no)
         return board
