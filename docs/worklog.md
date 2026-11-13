@@ -37,3 +37,21 @@
 - 印は `[ ]` 未着手、`[O]` 着手中、`[x]` 完了。
 - TODO.md はテストリストというより、やることを全部メモする TODO リストとして使う。そのため「言語を選んで環境を作る」を先頭に入れた。
 - TODO.md は常に更新しながら、そのとき作業しているブランチにコミットしていく。
+
+### 13:20頃 言語と環境
+
+- 使える環境を確認した：Python 3.15.2 / uv 0.13.6、Node.js v22 / pnpm 10。Java、Go、Rust はなし。
+- Python + uv + pytest に決めた。リンター・静的チェックの選定は Claude に任せ、やっとむが確認して承認した → [ADR 0003](adr/0003-language-and-tools.md)
+- パッケージ名はリポジトリ名の `mancara` ではなく、英語の綴りに合わせて `mancala` にした。
+- `uv init --lib` が生成したサンプル関数 `hello()` は消した。
+- `uv add --dev` は `>=` で書くので、`==` に書き換えて固定した。入ったバージョン：pytest 9.2.0、ruff 0.17.4、mypy 2.4.1。
+- `.venv` は uv が中に `.gitignore`（`*`）を置くので、Git の追跡に入らない。`.pytest_cache` などは `~/.gitignore` で除外されている。
+- テストはまだ 0 件。pytest は「no tests ran」で終了コード 5 になる。
+
+### 13:40頃 環境確認とコミットの決まり
+
+- 環境確認のため、`answer()` が42を返すサンプルのテストを書いた。まず `0` を返すようにして失敗を確認し、それから42に直して通した。
+- Red / Green / Refactor のそれぞれでコミットし、プレフィックス（`test:` `feat:` `refactor:` など）を付けることにした → [ADR 0004](adr/0004-commit-per-tdd-step.md)
+- サンプルは Red（`test:`）と Green（`feat:`）でコミットした。
+- サンプルの `answer()` には直すところがなかった。Refactor で変更がなければコミットしないことにして、ADR 0004 に追記した。
+- プレフィックスは `feature:` ではなく Conventional Commits に合わせて `feat:` にし、`docs:` と `chore:` を足した。
