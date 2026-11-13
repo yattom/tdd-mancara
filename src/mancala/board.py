@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import ClassVar
 
 
 class Pit(Enum):
@@ -13,7 +14,9 @@ class Pit(Enum):
 
 
 class Board:
-    _pit_index_map = {pit: index for index, pit in enumerate(Pit)}
+    _pit_index_map: ClassVar[dict[Pit, int]] = {
+        pit: index for index, pit in enumerate(Pit)
+    }
 
     def __init__(self) -> None:
         self._stones = [3, 3, 3, 3, 3, 3, 3, 3]
