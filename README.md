@@ -21,6 +21,8 @@ TDD の練習セッションのリポジトリ。
 - 意思決定と作業記録の残し方：[ADR 0002](docs/adr/0002-recording-decisions-and-worklog.md)
   - 意思決定は `docs/adr/`、作業ログは `docs/worklog.md`
 - 言語と開発ツール：[ADR 0003](docs/adr/0003-language-and-tools.md)
+- TDD のステップごとのコミットとコミットメッセージ：[ADR 0004](docs/adr/0004-commit-per-tdd-step.md)
+- Board は外部から immutable に見えるように振る舞う：[ADR 0005](docs/adr/0005-board-behaves-immutable.md)
 
 ## 開発コマンド
 
