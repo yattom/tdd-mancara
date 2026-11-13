@@ -20,6 +20,16 @@ TDD の練習セッションのリポジトリ。
 - ブランチ戦略：[ADR 0001](docs/adr/0001-branch-strategy.md)
 - 意思決定と作業記録の残し方：[ADR 0002](docs/adr/0002-recording-decisions-and-worklog.md)
   - 意思決定は `docs/adr/`、作業ログは `docs/worklog.md`
+- 言語と開発ツール：[ADR 0003](docs/adr/0003-language-and-tools.md)
+
+## 開発コマンド
+
+```sh
+uv run pytest              # テスト
+uv run ruff check          # リンター
+uv run ruff format --check # フォーマットの確認（直すときは --check を外す）
+uv run mypy                # 型チェック
+```
 
 ## お題：環のマンカラ
 
