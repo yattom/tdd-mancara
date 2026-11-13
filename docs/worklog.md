@@ -47,3 +47,9 @@
 - `uv add --dev` は `>=` で書くので、`==` に書き換えて固定した。入ったバージョン：pytest 9.2.0、ruff 0.17.4、mypy 2.4.1。
 - `.venv` は uv が中に `.gitignore`（`*`）を置くので、Git の追跡に入らない。`.pytest_cache` などは `~/.gitignore` で除外されている。
 - テストはまだ 0 件。pytest は「no tests ran」で終了コード 5 になる。
+
+### 13:40頃 環境確認とコミットの決まり
+
+- 環境確認のため、`answer()` が42を返すサンプルのテストを書いた。まず `0` を返すようにして失敗を確認し、それから42に直して通した。
+- Red / Green / Refactor のそれぞれでコミットし、プレフィックス（`test:` `feat:` `refactor:` など）を付けることにした → [ADR 0004](adr/0004-commit-per-tdd-step.md)
+- サンプルは Red（`test:`）と Green（`feat:`）でコミットした。
