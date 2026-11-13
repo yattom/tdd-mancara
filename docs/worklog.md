@@ -53,3 +53,5 @@
 - 環境確認のため、`answer()` が42を返すサンプルのテストを書いた。まず `0` を返すようにして失敗を確認し、それから42に直して通した。
 - Red / Green / Refactor のそれぞれでコミットし、プレフィックス（`test:` `feat:` `refactor:` など）を付けることにした → [ADR 0004](adr/0004-commit-per-tdd-step.md)
 - サンプルは Red（`test:`）と Green（`feat:`）でコミットした。
+- サンプルの `answer()` には直すところがなかった。Refactor で変更がなければコミットしないことにして、ADR 0004 に追記した。
+- プレフィックスは `feature:` ではなく Conventional Commits に合わせて `feat:` にし、`docs:` と `chore:` を足した。
